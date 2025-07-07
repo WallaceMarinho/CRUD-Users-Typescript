@@ -1,4 +1,4 @@
-# Sovre o Projeto
+# Sobre o Projeto
 
 Este projeto tem como objetivo desenvolver uma aplicação web utilizando TypeScript com foco nos conceitos de autenticação de usuários,
 manutenção de senhas, operações CRUD (Create, Read, Update, Delete) e conectividade com banco de dados
@@ -25,6 +25,19 @@ Antes de rodar o projeto, você precisa ter os seguintes softwares instalados:
 ### Passos para Rodar o Projeto
 
 1. **Clone o Repositório**:
-   ```bash
-   git clone <URL_DO_REPOSITORIO>
+   git clone https://github.com/WallaceMarinho/CRUD-Users-Typescript.git
+   
    cd backend-projeto
+
+
+2.  **Instale as dependências**:
+   npm install
+
+3.  **Configure o Banco de Dados**:
+Instale o PostgreSQL em seu site oficial, crie um banco de dados dentro do cliente Postgre ou em terminal conforme o arquivo schema.prisma e atualize a variável DATABASE_URL no arquivo .env com as credenciais do seu banco de dados.
+
+4.  **Execute as Migrações do Prisma**:
+npx prisma migrate dev --name init
+
+5. **Inicie o Servidor**:
+npm run dev
