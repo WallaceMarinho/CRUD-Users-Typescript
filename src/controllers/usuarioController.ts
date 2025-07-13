@@ -61,7 +61,7 @@ export const UsuarioController = {
   delete: async (req: Request, res: Response): Promise<void> => {
     const { username } = req.params;
 
-    // Verifica se o usuário é do tipo Administrador
+   
     if (req.user.tipo !== 'A') {
       res.status(403).json({ error: 'Acesso negado. Apenas administradores podem deletar usuários.' });
       return;
