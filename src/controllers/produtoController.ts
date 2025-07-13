@@ -10,7 +10,7 @@ export const ProdutoController = {
         data: {
           nome,
           preco,
-          criadoPor: req.user.username // Pegando do token JWT
+          criadoPor: req.user.username 
         },
       });
       res.status(201).json(produto);
@@ -30,7 +30,7 @@ export const ProdutoController = {
 
   update: async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
-    const { nome, preco } = req.body; // Supondo que você tenha esses campos
+    const { nome, preco } = req.body; 
     try {
       const produto = await prisma.produto.update({
         where: { id: Number(id) },

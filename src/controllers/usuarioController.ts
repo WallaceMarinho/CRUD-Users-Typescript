@@ -1,24 +1,25 @@
 import { Request, Response } from 'express';
 import prisma from '../config/prisma';
+import { hashPassword } from '../utils/hash'; 
 
 export const UsuarioController = {
   create: async (req: Request, res: Response): Promise<void> => {
     const { username, password, nome, tipo } = req.body;
 
-    // Verifica se o usuário é do tipo Administrador
     if (req.user.tipo !== 'A') {
       res.status(403).json({ error: 'Acesso negado. Apenas administradores podem criar usuários.' });
       return;
     }
 
     try {
+      const hashedPassword = await hashPassword(password); // Faça o hash aqui!
       const usuario = await prisma.usuario.create({
         data: {
           username,
-          password, // Considere usar hashing para senhas
+          password: hashedPassword,
           nome,
           tipo,
-          status: 'A', // Status padrão
+          status: 'A',
         },
       });
       res.status(201).json(usuario);
@@ -40,7 +41,7 @@ export const UsuarioController = {
     const { username } = req.params;
     const { nome, tipo, status } = req.body;
 
-    // Verifica se o usuário é do tipo Administrador
+    
     if (req.user.tipo !== 'A') {
       res.status(403).json({ error: 'Acesso negado. Apenas administradores podem atualizar usuários.' });
       return;
@@ -77,13 +78,13 @@ export const UsuarioController = {
   },
 
   access: async (req: Request, res: Response): Promise<void> => {
-    const { username } = req.user; // Assume que o username está no token
+    const { username } = req.user; 
 
     try {
       await prisma.usuario.update({
         where: { username },
         data: {
-          quant_acesso: { increment: 1 }, // Incrementa a contagem de acessos
+          quant_acesso: { increment: 1 }, 
         },
       });
       res.status(200).json({ message: 'Acesso registrado com sucesso.' });
