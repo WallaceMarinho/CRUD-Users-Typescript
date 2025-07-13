@@ -2,7 +2,7 @@
 
 Este projeto tem como objetivo desenvolver uma aplicação web utilizando TypeScript com foco nos conceitos de autenticação de usuários,
 manutenção de senhas, operações CRUD (Create, Read, Update, Delete) e conectividade com banco de dados
-PostgreSQL (no momento este é apenas o backend do projeto).
+PostgreSQL.
 
 ## Tecnologias Utilizadas
 
@@ -41,3 +41,6 @@ npx prisma migrate dev --name init
 
 5. **Inicie o Servidor**:
 npm run dev
+
+6. **Configurando o Frontend**:
+entre no front com cd ../frontend no terminal e baixe as dependências com npm install
