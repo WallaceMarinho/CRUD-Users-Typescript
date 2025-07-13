@@ -1,0 +1,172 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6fb;
+  margin: 0;
+  padding: 0;
+}
+
+header.navbar {
+  background: #004aad;
+  color: #fff;
+  padding: 0 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a, .navbar button {
+  color: #fff;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.navbar a:hover, .navbar button:hover {
+  background: #00337a;
+}
+
+.main-content {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 2rem;
+}
+
+h1 {
+  color: #004aad;
+  margin-bottom: 1.5rem;
+}
+
+button, .btn {
+  background: #004aad;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  transition: background 0.2s;
+}
+
+button:hover, .btn:hover {
+  background: #00337a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: #f9f9f9;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+th {
+  background: #e3eafc;
+  color: #004aad;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background: #f4f6fb;
+}
+
+tr:hover {
+  background: #e3eafc;
+}
+
+.center {
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .main-content {
+    padding: 1rem;
+  }
+  table, th, td {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+  .navbar nav {
+    gap: 0.5rem;
+  }
+}
+
+.form-cadastro {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-cadastro label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #004aad;
+  margin-bottom: 0.5rem;
+}
+
+.form-cadastro input,
+.form-cadastro select {
+  margin-top: 0.3rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #bfc9da;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #f4f6fb;
+}
+
+.form-cadastro button {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.form-cadastro .btn-cancelar {
+  background: #ccc;
+  color: #222;
+  margin-top: 0.5rem;
+}
+
+.form-cadastro .btn-cancelar:hover {
+  background: #bbb;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
